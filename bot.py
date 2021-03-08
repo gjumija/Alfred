@@ -20,4 +20,4 @@ for filename in os.listdir('./cogs'):
 
 
 ################################# Token
-client.run('ODE4MzkwMTA1NjA0NDg5MjI4.YEXXLg.XqxeGm0UpFHcovmopZ43I-PqIiA')
+client.run('token')
