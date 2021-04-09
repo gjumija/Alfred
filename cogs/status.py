@@ -2,13 +2,10 @@
 import discord
 from discord.ext import commands, tasks
 
-class Status(object):
+class Status(commands.Cog):
     """docstring for Status."""
 
-    def __init__(self, arg):
-        super(Status, self).__init__()
-        self.arg = arg
-
+    def __init__(self, client):
         self.client = client
         self._join_remove_channel_id = 829970999788699708
 
