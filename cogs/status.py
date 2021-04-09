@@ -8,24 +8,20 @@ class Status(commands.Cog):
 
 ################################## Basic log
 @commands.Cog.listener()
-async def on_member_join(self):
-    await ctx.send(f'{member.mention} se připojil fsociety.')
-
-@client.event
-async def on_member_join(self, member):
+async def member_join(self, member):
     await ctx.send(f'{member.mention} se připojil k fsociety.')
 
-@client.event
-async def on_member_rmeove(self, member):
+@commands.Cog.listener()
+async def member_remove(self, member):
     await ctx.send(f'{member.mention} opustil fsociety.')
 
 ################################## Ping
-@client.command()
+@commands.command()
 async def ping(self, ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
 
 ################################## Clear
-@client.command(aliases=['c', 'clr'])
+@commands.command(aliases=['c', 'clr'])
 async def clear(ctx, amount=2):
     await ctx.channel.purge(limit=amount)
 

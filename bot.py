@@ -21,10 +21,5 @@ for filename in os.listdir('./cogs'):
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-################################## Events
-@client.event
-async def on_ready():
-    print(f'{client.user.name} se připojil!')
-
 ################################## Token
 client.run(TOKEN)
