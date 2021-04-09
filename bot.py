@@ -10,7 +10,6 @@ start_time = time.time()
 
 ################################## Basic config
 client = commands.Bot(command_prefix=",")
-client = discord.Client()
 
 ################################## Cog loader
 client.command()
