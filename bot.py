@@ -21,5 +21,5 @@ for filename in os.listdir('./cogs'):
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-################################## Token
+################################## Run boy run
 client.run(TOKEN)
