@@ -5,20 +5,25 @@ from discord.ext import commands, tasks
 class Status(commands.Cog):
     def __init__(self, client):
         self.client = client
+        self._join_remove_channel_id = 829970999788699708
 
     ################################## Basic log
     @commands.Cog.listener()
-    async def member_join(self, member):
-        await ctx.send(f'{member.mention} se připojil k fsociety.')
+    async def on_member_join(self, member):
+        if member.bot: return
+        chnl = self.client.get_channel(self._join_remove_channel_id)
+        await chnl.send(f'{member.mention} se připojil k fsociety.')
 
     @commands.Cog.listener()
-    async def member_remove(self, member):
-        await ctx.send(f'{member.mention} opustil fsociety.')
+    async def on_member_remove(self, member):
+        if member.bot: return
+        chnl = self.client.get_channel(self._join_remove_channel_id)
+        await chnl.send(f'{member.mention} opustil fsociety.')
 
     ################################## Ping
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
+        await ctx.send(f'Pong! {round(self.client.latency * 1000)} ms')
 
     ################################## Clear
     @commands.command(aliases=['c', 'clr'])
