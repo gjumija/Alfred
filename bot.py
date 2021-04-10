@@ -12,11 +12,11 @@ start_time = time.time()
 client = commands.Bot(command_prefix=",")
 
 ################################## Cog loader
-client.command()
+@client.command()
 async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
 
-client.command()
+@client.command()
 async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
 
