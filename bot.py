@@ -9,7 +9,7 @@ print('Bot is ready.')
 start_time = time.time()
 
 ################################## Basic config
-client = commands.Bot(command_prefix=",")
+client = commands.Bot(command_prefix="/")
 
 ################################## Cog loader
 @client.command()
